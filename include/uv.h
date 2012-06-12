@@ -224,6 +224,11 @@ UV_EXTERN uv_loop_t* uv_loop_new(void);
 UV_EXTERN void uv_loop_delete(uv_loop_t*);
 
 /*
+ * Returns the loop file descriptor on Unix. On Windows, always return -1.
+ */
+UV_EXTERN int uv_loop_get_backend_fd(uv_loop_t*);
+
+/*
  * Returns the default loop.
  */
 UV_EXTERN uv_loop_t* uv_default_loop(void);

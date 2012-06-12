@@ -226,6 +226,11 @@ namespace ev {
       return ev_backend (EV_AX);
     }
 
+    int backend_fd () const
+    {
+      return ev_backend_fd(EV_AX);
+    }
+
     tstamp now () const throw ()
     {
       return ev_now (EV_AX);

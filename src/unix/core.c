@@ -214,6 +214,11 @@ uv_loop_t* uv_loop_new(void) {
 }
 
 
+int uv_loop_get_backend_fd(uv_loop_t* loop) {
+  return ev_backend_fd(loop->ev);
+}
+
+
 void uv_loop_delete(uv_loop_t* loop) {
   uv__loop_delete(loop);
 #ifndef NDEBUG
